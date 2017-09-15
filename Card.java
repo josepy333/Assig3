@@ -1,5 +1,7 @@
 // Card Class
 
+
+
 public class Card
 {
    enum Suit {clubs, diamonds, hearts, spades};
@@ -9,8 +11,6 @@ public class Card
 
    public Card(char value, Suit suit)
    {
-      setValue();
-      setSuit();
       setCard(value, suit);
    }
 
@@ -32,8 +32,16 @@ public class Card
    // mutator that accepts legal values 
    public boolean set(char value, Suit suit)
    {
-      this.value = value;
-      this.suit = suit;
+      if (isValid(value, suit) == true) 
+      {
+         this.value = value;
+         this.suit = suit;
+         errorFlag = false;
+      }
+      else
+      {
+         errorFlag = true;
+      }
       return errorFlag;
    }
 
@@ -42,10 +50,11 @@ public class Card
    {
 
    }
-
-   public String getValue()
+   
+   // accessor for suit
+   public char getValue()
    {
-
+      return value;
    }
 
    public boolean equals(Card card)
