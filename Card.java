@@ -1,7 +1,4 @@
 // Card Class
-
-
-
 public class Card
 {
    enum Suit {clubs, diamonds, hearts, spades};
@@ -11,7 +8,7 @@ public class Card
 
    public Card(char value, Suit suit)
    {
-      setCard(value, suit);
+      set(value, suit);
    }
 
    // this method displays the card if valid and Invalid Card otherwise
@@ -46,17 +43,18 @@ public class Card
    }
 
    // accessor for suit
-   public String getSuit()
+   public Suit getSuit()
    {
-
+      return suit;
    }
    
-   // accessor for suit
+   // accessor for value
    public char getValue()
    {
       return value;
    }
-
+   
+   // checks if all fields are identical 
    public boolean equals(Card card)
    {
 
