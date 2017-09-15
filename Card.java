@@ -11,17 +11,18 @@ public class Card
       set(value, suit);
    }
 
-   // this method displays the card if valid and Invalid Card otherwise
+   //  method to display the card if valid and Invalid Card otherwise
    public String toString()
    {
       String output = "";
       if (errorFlag == true)
       {
-         output = "Invalid Card"; 
+         output = "***Invalid Card***"; 
       }
       else 
       {
-
+         
+        
       }
       return output;
    }
@@ -59,7 +60,8 @@ public class Card
    {
 
    }
-
+   
+   // checks if card value is valid
    private boolean isValid(char value, Suit suit)
    {
       switch(value)
