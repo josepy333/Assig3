@@ -12,25 +12,21 @@ public class Card
    }
 
    //  method to display the card if valid and Invalid Card otherwise
+   @Override
    public String toString()
    {
-      String output = "";
-      if (errorFlag == true)
+      
+      if (errorFlag)
       {
-         output = "***Invalid Card***"; 
+         return "***Invalid Card***"; 
       }
-      else 
-      {
-         
-        
-      }
-      return output;
+      return String.format("%s of %s", value, suit);
    }
 
    // mutator that accepts legal values 
    public boolean set(char value, Suit suit)
    {
-      if (isValid(value, suit) == true) 
+      if (isValid(value, suit)) 
       {
          this.value = value;
          this.suit = suit;
@@ -58,7 +54,7 @@ public class Card
    // checks if all fields are identical 
    public boolean equals(Card card)
    {
-
+      return suit.equals(card.suit) && value == card.value;
    }
    
    // checks if card value is valid
