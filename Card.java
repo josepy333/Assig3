@@ -15,7 +15,6 @@ public class Card
    @Override
    public String toString()
    {
-      
       if (errorFlag)
       {
          return "***Invalid Card***"; 
@@ -78,8 +77,6 @@ public class Card
             return true;
          default:
             return false;
-      }
-      
+      }  
    }
-
 }
