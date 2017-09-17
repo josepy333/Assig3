@@ -36,6 +36,22 @@ class Card
    {
       set(value, suit);
    }
+   
+   // Copy Constructor
+   public Card(Card aCard)
+   {
+      if (aCard == null)      // Not a real card
+      {
+         System.out.println("Fatal Error.");
+         System.exit(0);
+      }
+      
+      /*
+       *  Want to check this
+       */
+      value = aCard.value;
+      suit = aCard.suit;
+   }
 
    //  method to display the card if valid and Invalid Card otherwise
    @Override
@@ -110,9 +126,10 @@ class Card
 // Hand class
 class Hand
 {
-   public static int MAX_CARDS = 100;
+   public static int MAX_CARDS = 50;
    private Card[] myCards;
    private int numCards;
+   private int numUsed;       // Number of indeces currently in use
    
    // Default Constructor
    public Hand()
@@ -121,11 +138,51 @@ class Hand
       numCards = 1;
    }
    
+   // Copy constructor
+   public Hand(Hand object)
+   {
+      int lengthOfArrays = object.myCards.length;
+      this.myCards = new Card[lengthOfArrays];
+      for (int i =0; i < lengthOfArrays; i++)
+         this.myCards[i] = new Card(object.myCards[i]);
+   }
+   
    // Method that removes all cards from the hand
    public void resetHand()
    {
       myCards = new Card[numCards];
    }
    
+   /* Method that adds a card to the next available position in the myCards
+    * array
+    */
+   public boolean takeCard(Card card)
+   {
+      if (numUsed >= myCards.length)
+      {
+         System.out.println("Error: The hand is full.");
+         return false;
+      }
+      else
+      {
+           myCards[numUsed] = card;
+           numUsed++;
+           return true;
+      }
+   }
+   
+   // Accessor for an indivicual card
+   public Card inspectCard(int k)
+   {
+      Card[] temp = new Card[myCards.length];
+      for (int i = 0; i < myCards.length; i++)
+      {
+         temp[i] = new Card(myCards[i]);
+      }
+      return temp[k];
+   }
+   
+   // Converts hand to a string and displays the entire String
+ 
    
 }
