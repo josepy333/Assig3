@@ -130,6 +130,7 @@ class Hand
    private Card[] myCards;
    private int numCards;
    private int numUsed;       // Number of indeces currently in use
+   private boolean errorFlag;
    
    // Default Constructor
    public Hand()
@@ -171,18 +172,50 @@ class Hand
       }
    }
    
-   // Accessor for an indivicual card
+   // Accessor for an individual card
    public Card inspectCard(int k)
    {
       Card[] temp = new Card[myCards.length];
-      for (int i = 0; i < myCards.length; i++)
+      if (k >= myCards.length)
       {
-         temp[i] = new Card(myCards[i]);
+         errorFlag = true;
+      }
+      else
+      {
+         
+         for (int i = 0; i < myCards.length; i++)
+         {
+            temp[i] = new Card(myCards[i]);
+         }
       }
       return temp[k];
    }
    
    // Converts hand to a string and displays the entire String
- 
+   public String toString()
+   {
+      String handString = "";
+      if (errorFlag)
+      {
+         return "***Invalid Hand***"; 
+      }
+      for (int i =0; i < myCards.length; i++)
+      {
+         handString = handString + " " + myCards[i];
+      }
+      return handString; 
+   }
+   
+   // Mutator method for numCards
+   public void setNumCards(int num)
+   {
+      numCards = num;
+   }
+   
+   // Accessor method for numCards
+   public int getNumCards()
+   {
+      return numCards;
+   }
    
 }
