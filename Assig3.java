@@ -219,3 +219,127 @@ class Hand
    }
    
 }
+
+/*
+ *  Deck class
+ */
+public class Deck {
+ 
+  public final int MAX_CARDS = 6*52;
+  
+  private static Card[] masterPack;
+  
+  private Card[] cards;
+  private int topCard;
+  private int numPacks;
+  
+  // Constructor
+  public Deck() {
+      init(1);
+  }
+  
+  // Constructor
+  public Deck(int numPacks) {
+      init(numPacks);
+  }
+  
+  // Method to initialize Deck
+  public void init(int numPacks) {
+      allocateMasterPack();
+      this.numPacks = numPacks;
+      cards = new Card[52*numPacks];
+      int i = 0;
+      for (int j = 0; j < numPacks; j++) {
+          for (int k = 0; k < 52; k++) {
+              cards[i++] = masterPack[k];
+          }
+      }
+      this.topCard = 52 * numPacks - 1;
+  }
+  
+  // Method to shuffle Deck
+  public void shuffle() {
+      for (int i = 0; i < cards.length; i++) {
+          Card original = cards[i];
+          int j = (int)(Math.random() * cards.length);
+          cards[i] = cards[j];
+          cards[j] = original;
+      }
+  }
+  
+  // Method to deal Card from Deck
+  public Card dealCard() {
+      if (topCard >= 0) {
+          return cards[topCard--];
+      } else {
+          return null;
+      }
+  }
+  
+  // Method to get index of top Card
+  public int getTopCard() {
+      return topCard;
+  }
+  
+  // Method to inspect Card
+  public Card inspectCard(int k) {
+      if (k < 0 || k >= topCard) {
+          return new Card('0', Suit.Spades);
+      } else {
+          return cards[k];
+      }
+  }
+  
+  // Method to allocate Master Deck
+  private static void allocateMasterPack() {
+    if (masterPack == null) {
+      masterPack = new Card[52];
+      Suit[] suits = {Suit.Clubs, Suit.Diamonds, Suit.Hearts, Suit.Spades};
+      String values = "A23456789TJQK";
+      int i = 0;
+      for (Suit suit: suits) {
+        for (char value: values.toCharArray()) {
+          Card card = new Card(value, suit);
+          masterPack[i++] = card;
+        }
+      }
+    }
+  }
+  
+  // Main method which executes test code for Deck
+  public static void main(String[] args) {
+      System.out.println("Deck of 2 packs of cards:");
+      Deck deck = new Deck(2);
+      System.out.println("Dealing all unshuffled cards");
+      while (deck.getTopCard() >= 0) {
+          Card card = deck.dealCard();
+          System.out.print(card + " / ");
+      }
+      System.out.println();
+      deck = new Deck(2);
+      deck.shuffle();
+      System.out.println("Dealing all SHUFFLED cards");
+      while (deck.getTopCard() >= 0) {
+          Card card = deck.dealCard();
+          System.out.print(card + " / ");
+      }
+      System.out.println("\n");
+      System.out.println("Deck of 1 pack of cards:");
+      deck = new Deck(1);
+      System.out.println("Dealing all unshuffled cards");
+      while (deck.getTopCard() >= 0) {
+          Card card = deck.dealCard();
+          System.out.print(card + " / ");
+      }
+      System.out.println();
+      deck = new Deck(1);
+      deck.shuffle();
+      System.out.println("Dealing all SHUFFLED cards");
+      while (deck.getTopCard() >= 0) {
+          Card card = deck.dealCard();
+          System.out.print(card + " / ");
+      }
+      System.out.println();      
+  }
+  
+}
