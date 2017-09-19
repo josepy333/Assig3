@@ -76,7 +76,7 @@ public class Assig3
       // Deal the shuffled hands
       while (deck.getTopCard() >= 0)
       {
-         for (int i = 0; i <= numPlayers; i++)
+         for (int i = 0; i < numPlayers; i++)
          {
             playerHand[i].takeCard(deck.dealCard());
          }
