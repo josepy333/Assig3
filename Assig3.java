@@ -22,9 +22,77 @@ public class Assig3
       int numPlayers = 0;
       int handNumber = 0;
       int input;
-                
+      
+      //********** Phase 1 - Test for Card Class **********
+      // Create 3 cards - 2 valid and 1 invalid
+      Card testCard1 = new Card('Q', Card.Suit.spades); // Valid
+      Card testCard2 = new Card('K', Card.Suit.spades); // Valid
+      Card testCard3 = new Card('0', Card.Suit.spades); // Invalid
+      
+      System.out.println("Test for Card Class (Phase 1):");
+      System.out.println("Valid Card: " + testCard1.toString());
+      System.out.println("Valid Card: " + testCard2.toString());
+      System.out.println("Invalid Card: " + testCard3.toString());
+      
+      // Modify one valid card to be invalid and make the previously invalid card valid
+      testCard1.set('0', Card.Suit.spades);
+      testCard3.set('4', Card.Suit.spades);
+      
+      System.out.println("Valid card invalidated: " + testCard1.toString());
+      System.out.println("Unchanged card: " + testCard2.toString());
+      System.out.println("Invalid card validated: " + testCard3.toString());
+      
+      
+      //********** Phase 3 - Test for Deck Class **********
+      
+      System.out.println('\n' + "Test for Deck Class (Phase 3):");
+      System.out.println("Deck of 2 packs of cards:");
+      Deck testDeck = new Deck(2);
+      System.out.println("Dealing all unshuffled cards");
+      
+      while (testDeck.getTopCard() >= 0) 
+      {
+          Card card = testDeck.dealCard();
+          System.out.print(card + " / ");
+      }
+      
+      testDeck = new Deck(2);
+      testDeck.shuffle();
+      System.out.println('\n' + "Dealing all SHUFFLED cards");
+      
+      while (testDeck.getTopCard() >= 0) 
+      {
+          Card card = testDeck.dealCard();
+          System.out.print(card + " / ");
+      }
+      
+      System.out.println('\n' + "Deck of 1 pack of cards:");
+      testDeck = new Deck(1);
+      System.out.println("Dealing all unshuffled cards");
+      
+      while (testDeck.getTopCard() >= 0) 
+      {
+          Card card = testDeck.dealCard();
+          System.out.print(card + " / ");
+      }
+      
+      testDeck = new Deck(1);
+      testDeck.shuffle();
+      System.out.println('\n' + "Dealing all SHUFFLED cards");
+      
+      while (testDeck.getTopCard() >= 0) 
+      {
+          Card card = testDeck.dealCard();
+          System.out.print(card + " / ");
+      }
+      
+      System.out.println();
+      
+      
+      // ********** Phase 4 **********
+      
       // Get input from user and check value
-      System.out.println("Please enter the number of players (1 - 10), or enter 0 to quit:");
+      System.out.println("Please enter the number of players (1 - 10):");
       input = keyboard.nextInt();
         
       while ((input < 1) || input > 10)
@@ -66,12 +134,12 @@ public class Assig3
       }
       
       // Display the hands
-      System.out.println("Dealing the unsorted deck resulted in the following hands:");
+      System.out.println('\n' + "Dealing the unsorted deck resulted in the following hands:");
         
       for (int i = 0; i < numPlayers; i++)
       {
          handNumber = i + 1;
-         System.out.println("Hand number " + handNumber + ": ");
+         System.out.println('\n' + "Hand number " + handNumber + ": ");
          System.out.println(playerHand[i].toString());
       }
       
@@ -99,12 +167,12 @@ public class Assig3
       
         
       // Display the hands
-      System.out.println("Dealing the sorted deck resulted in the following hands:");
+      System.out.println('\n' + "Dealing the sorted deck resulted in the following hands:");
 
       for (int i = 0; i < numPlayers; i++)
       {
          handNumber = i + 1;
-         System.out.println("Hand number " + handNumber + ": ");
+         System.out.println('\n' + "Hand number " + handNumber + ": ");
          System.out.println(playerHand[i].toString());
       }
    }
@@ -412,47 +480,5 @@ class Deck {
         }
       }
     }
-  }
-  
-  // Main method which executes test code for Deck
-  public static void main(String[] args) 
-  {
-      System.out.println("Deck of 2 packs of cards:");
-      Deck deck = new Deck(2);
-      System.out.println("Dealing all unshuffled cards");
-      while (deck.getTopCard() >= 0) 
-      {
-          Card card = deck.dealCard();
-          System.out.print(card + " / ");
-      }
-      System.out.println();
-      deck = new Deck(2);
-      deck.shuffle();
-      System.out.println("Dealing all SHUFFLED cards");
-      while (deck.getTopCard() >= 0) 
-      {
-          Card card = deck.dealCard();
-          System.out.print(card + " / ");
-      }
-      System.out.println("\n");
-      System.out.println("Deck of 1 pack of cards:");
-      deck = new Deck(1);
-      System.out.println("Dealing all unshuffled cards");
-      while (deck.getTopCard() >= 0) 
-      {
-          Card card = deck.dealCard();
-          System.out.print(card + " / ");
-      }
-      System.out.println();
-      deck = new Deck(1);
-      deck.shuffle();
-      System.out.println("Dealing all SHUFFLED cards");
-      while (deck.getTopCard() >= 0) 
-      {
-          Card card = deck.dealCard();
-          System.out.print(card + " / ");
-      }
-      System.out.println();      
-  }
-  
+  }  
 }
