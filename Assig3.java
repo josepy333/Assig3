@@ -24,7 +24,7 @@ public class Assig3
       int input;
                 
       // Get input from user and check value
-      System.out.println("Please enter the number of players (1 - 10), or enter 0 to quit:");
+      System.out.println("Please enter the number of players (1 - 10):");
       input = keyboard.nextInt();
         
       while ((input < 1) || input > 10)
