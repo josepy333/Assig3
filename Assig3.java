@@ -166,7 +166,7 @@ class Hand
       }
       else
       {
-           myCards[numUsed] = card;
+           myCards[numUsed] = new Card(card);
            numUsed++;
            return true;
       }
