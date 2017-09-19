@@ -46,7 +46,7 @@ public class Assig3
       // Deal the unshuffled deck out to the players
       while (deck.getTopCard() >= 0)
       {
-         for (int i = 0; i <= numPlayers; i++)
+         for (int i = 0; i < numPlayers; i++)
          {
             playerHand[i].takeCard(deck.dealCard());
          }
