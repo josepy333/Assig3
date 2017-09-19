@@ -223,7 +223,7 @@ class Hand
 /*
  *  Deck class
  */
-public class Deck {
+class Deck {
  
   public final int MAX_CARDS = 6*52;
   
