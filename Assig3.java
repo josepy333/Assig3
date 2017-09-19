@@ -42,6 +42,11 @@ public class Assig3
 	
       // Create array of hand objects
       Hand [] playerHand = new Hand[numPlayers];
+      
+      for (int i = 0; i < numPlayers; i++)
+      {
+         playerHand[i] = new Hand();
+      }
 	
       // Deal the unshuffled deck out to the players
       while (deck.getTopCard() >= 0)
