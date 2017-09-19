@@ -60,12 +60,12 @@ public class Assig3
       }
         
       // Display the hands
-      System.out.println("Dealing the unsorted deck resulted in the following hands:");
+      System.out.println('\n' + "Dealing the unsorted deck resulted in the following hands:");
         
       for (int i = 0; i < numPlayers; i++)
       {
          handNumber = i + 1;
-         System.out.println("Hand number " + handNumber + ": ");
+         System.out.println('\n' + "Hand number " + handNumber + ": ");
          System.out.println(playerHand[i].toString());
       }
         
@@ -93,12 +93,12 @@ public class Assig3
       
         
       // Display the hands
-      System.out.println("Dealing the sorted deck resulted in the following hands:");
+      System.out.println('\n' + "Dealing the sorted deck resulted in the following hands:");
 
       for (int i = 0; i < numPlayers; i++)
       {
          handNumber = i + 1;
-         System.out.println("Hand number " + handNumber + ": ");
+         System.out.println('\n' + "Hand number " + handNumber + ": ");
          System.out.println(playerHand[i].toString());
       }
    }
