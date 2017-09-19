@@ -22,24 +22,24 @@ public class Assig3
       int numPlayers = 0;
       int handNumber = 0;
       int input;
-		
+                
       // Get input from user and check value
       System.out.println("Please enter the number of players (1 - 10), or enter 0 to quit:");
       input = keyboard.nextInt();
-	
+        
       while ((input < 1) || input > 10)
       {
          System.out.println("Your entry was not recognized.");
          System.out.println("Please enter the number of players (1 - 10):");
          input = keyboard.nextInt();
       }
-		
+                
       numPlayers = input;
-	
+        
       // Create the deck
       Deck deck = new Deck();
       deck.init(1);
-	
+        
       // Create array of hand objects
       Hand [] playerHand = new Hand[numPlayers];
       
@@ -47,7 +47,7 @@ public class Assig3
       {
          playerHand[i] = new Hand();
       }
-	
+        
       // Deal the unshuffled deck out to the players
       while (deck.getTopCard() >= 0)
       {
@@ -56,28 +56,28 @@ public class Assig3
             playerHand[i].takeCard(deck.dealCard());
          }
       }
-	
+        
       // Display the hands
       System.out.println("Dealing the unsorted deck resulted in the following hands:");
-	
+        
       for (int i = 0; i < numPlayers; i++)
       {
          handNumber = i + 1;
          System.out.println("Hand number " + handNumber + ": ");
          System.out.println(playerHand[i].toString());
       }
-	
+        
       // Reset the hands
       for (int i = 0; i < numPlayers; i++)
       {
          playerHand[i].resetHand();
       }
-	
+        
       // Re-populate deck and shuffle it
       deck.init(1);
       deck.shuffle();
       handNumber = 0;
-	
+        
       // Deal the shuffled hands
       while (deck.getTopCard() >= 0)
       {
@@ -86,7 +86,7 @@ public class Assig3
             playerHand[i].takeCard(deck.dealCard());
          }
       }
-	
+        
       // Display the hands
       System.out.println("Dealing the sorted deck resulted in the following hands:");
 
