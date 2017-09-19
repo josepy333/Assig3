@@ -39,6 +39,7 @@ public class Assig3
       testCard3.set('4', Card.Suit.spades);
       
       System.out.println("Valid card invalidated: " + testCard1.toString());
+      System.out.println("Unchanged card: " + testCard2.toString());
       System.out.println("Invalid card validated: " + testCard3.toString());
       
       
