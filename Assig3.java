@@ -283,6 +283,10 @@ class Hand
       for (int i =0; i < numUsed; i++)
       {
          handString = handString + " " + myCards[i] + " /";
+         if (i % 6 == 0 && i != 0)
+         {
+            handString = handString +"\n";
+         }
       }
       return handString; 
    }
