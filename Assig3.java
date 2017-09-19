@@ -46,19 +46,25 @@ public class Assig3
       for (int i = 0; i < numPlayers; i++)
       {
          playerHand[i] = new Hand();
+         System.out.println("We are on playerHand " + i);
       }
       
       
-        
+      int j = 1;  
       // Deal the unshuffled deck out to the players
       while (deck.getTopCard() >= 0)
       {
          for (int i = 0; i < numPlayers; i++)
          {
+            if (deck.getTopCard() < 0 )
+               break;
             playerHand[i].takeCard(deck.dealCard());
+            System.out.println("Dealing card " + j + "to player " + i);
+            j++;
          }
+         System.out.println("TEST");
       }
-        
+      
       // Display the hands
       System.out.println("Dealing the unsorted deck resulted in the following hands:");
         
@@ -68,7 +74,7 @@ public class Assig3
          System.out.println("Hand number " + handNumber + ": ");
          System.out.println(playerHand[i].toString());
       }
-        
+      
       // Reset the hands
       for (int i = 0; i < numPlayers; i++)
       {
@@ -85,11 +91,11 @@ public class Assig3
       {
          for (int i = 0; i < numPlayers; i++)
          {
+            if (deck.getTopCard() < 0 )
+               break;
             playerHand[i].takeCard(deck.dealCard());
          }
       }
-      
-      System.out.println("Test");
       
         
       // Display the hands
@@ -122,8 +128,8 @@ class Card
    {
       if (aCard == null)      // Not a real card
       {
-         System.out.println("Fatal Error.");
-         System.exit(0);
+        System.out.println("Fatal Error.");
+        System.exit(0);
       }
       
       /*
@@ -206,7 +212,7 @@ class Card
 // Hand class
 class Hand
 {
-   public static int MAX_CARDS = 50;
+   public static int MAX_CARDS = 100;
    private Card[] myCards;
    private int numCards;
    private int numUsed;       // Number of indeces currently in use
