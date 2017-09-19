@@ -47,6 +47,8 @@ public class Assig3
       {
          playerHand[i] = new Hand();
       }
+      
+      
         
       // Deal the unshuffled deck out to the players
       while (deck.getTopCard() >= 0)
@@ -86,6 +88,9 @@ public class Assig3
             playerHand[i].takeCard(deck.dealCard());
          }
       }
+      
+      System.out.println("Test");
+      
         
       // Display the hands
       System.out.println("Dealing the sorted deck resulted in the following hands:");
@@ -226,7 +231,8 @@ class Hand
    // Method that removes all cards from the hand
    public void resetHand()
    {
-      myCards = new Card[numCards];
+      myCards = new Card[MAX_CARDS];
+      numUsed = 0;
    }
    
    /* Method that adds a card to the next available position in the myCards
@@ -234,7 +240,7 @@ class Hand
     */
    public boolean takeCard(Card card)
    {
-      if (numUsed >= myCards.length)
+      if (numUsed > myCards.length)
       {
          System.out.println("Error: The hand is full.");
          return false;
@@ -274,9 +280,9 @@ class Hand
       {
          return "***Invalid Hand***"; 
       }
-      for (int i =0; i < myCards.length; i++)
+      for (int i =0; i < numUsed; i++)
       {
-         handString = handString + " " + myCards[i];
+         handString = handString + " " + myCards[i] + " /";
       }
       return handString; 
    }
@@ -309,23 +315,28 @@ class Deck {
   private int numPacks;
   
   // Constructor
-  public Deck() {
+  public Deck() 
+  {
       init(1);
   }
   
   // Constructor
-  public Deck(int numPacks) {
+  public Deck(int numPacks) 
+  {
       init(numPacks);
   }
   
   // Method to initialize Deck
-  public void init(int numPacks) {
+  public void init(int numPacks) 
+  {
       allocateMasterPack();
       this.numPacks = numPacks;
       cards = new Card[52*numPacks];
       int i = 0;
-      for (int j = 0; j < numPacks; j++) {
-          for (int k = 0; k < 52; k++) {
+      for (int j = 0; j < numPacks; j++) 
+      {
+          for (int k = 0; k < 52; k++) 
+          {
               cards[i++] = masterPack[k];
           }
       }
@@ -333,8 +344,10 @@ class Deck {
   }
   
   // Method to shuffle Deck
-  public void shuffle() {
-      for (int i = 0; i < cards.length; i++) {
+  public void shuffle() 
+  {
+      for (int i = 0; i < cards.length; i++) 
+      {
           Card original = cards[i];
           int j = (int)(Math.random() * cards.length);
           cards[i] = cards[j];
@@ -343,8 +356,10 @@ class Deck {
   }
   
   // Method to deal Card from Deck
-  public Card dealCard() {
-      if (topCard >= 0) {
+  public Card dealCard() 
+  {
+      if (topCard >= 0) 
+      {
           return cards[topCard--];
       } else {
           return null;
@@ -352,28 +367,36 @@ class Deck {
   }
   
   // Method to get index of top Card
-  public int getTopCard() {
+  public int getTopCard() 
+  {
       return topCard;
   }
   
   // Method to inspect Card
-  public Card inspectCard(int k) {
-      if (k < 0 || k >= topCard) {
+  public Card inspectCard(int k) 
+  {
+      if (k < 0 || k >= topCard) 
+      {
           return new Card('0', Card.Suit.spades);
-      } else {
+      } else 
+      {
           return cards[k];
       }
   }
   
   // Method to allocate Master Deck
-  private static void allocateMasterPack() {
-    if (masterPack == null) {
+  private static void allocateMasterPack() 
+  {
+    if (masterPack == null) 
+    {
       masterPack = new Card[52];
       Card.Suit[] suits = {Card.Suit.clubs, Card.Suit.diamonds, Card.Suit.hearts, Card.Suit.spades};
       String values = "A23456789TJQK";
       int i = 0;
-      for (Card.Suit suit: suits) {
-        for (char value: values.toCharArray()) {
+      for (Card.Suit suit: suits) 
+      {
+        for (char value: values.toCharArray()) 
+        {
           Card card = new Card(value, suit);
           masterPack[i++] = card;
         }
@@ -382,11 +405,13 @@ class Deck {
   }
   
   // Main method which executes test code for Deck
-  public static void main(String[] args) {
+  public static void main(String[] args) 
+  {
       System.out.println("Deck of 2 packs of cards:");
       Deck deck = new Deck(2);
       System.out.println("Dealing all unshuffled cards");
-      while (deck.getTopCard() >= 0) {
+      while (deck.getTopCard() >= 0) 
+      {
           Card card = deck.dealCard();
           System.out.print(card + " / ");
       }
@@ -394,7 +419,8 @@ class Deck {
       deck = new Deck(2);
       deck.shuffle();
       System.out.println("Dealing all SHUFFLED cards");
-      while (deck.getTopCard() >= 0) {
+      while (deck.getTopCard() >= 0) 
+      {
           Card card = deck.dealCard();
           System.out.print(card + " / ");
       }
@@ -402,7 +428,8 @@ class Deck {
       System.out.println("Deck of 1 pack of cards:");
       deck = new Deck(1);
       System.out.println("Dealing all unshuffled cards");
-      while (deck.getTopCard() >= 0) {
+      while (deck.getTopCard() >= 0) 
+      {
           Card card = deck.dealCard();
           System.out.print(card + " / ");
       }
@@ -410,7 +437,8 @@ class Deck {
       deck = new Deck(1);
       deck.shuffle();
       System.out.println("Dealing all SHUFFLED cards");
-      while (deck.getTopCard() >= 0) {
+      while (deck.getTopCard() >= 0) 
+      {
           Card card = deck.dealCard();
           System.out.print(card + " / ");
       }
