@@ -364,10 +364,10 @@ class Deck {
   private static void allocateMasterPack() {
     if (masterPack == null) {
       masterPack = new Card[52];
-      Suit[] suits = {Card.Suit.clubs, Card.Suit.diamonds, Card.Suit.hearts, Card.Suit.spades};
+      Card.Suit[] suits = {Card.Suit.clubs, Card.Suit.diamonds, Card.Suit.hearts, Card.Suit.spades};
       String values = "A23456789TJQK";
       int i = 0;
-      for (Suit suit: suits) {
+      for (Card.Suit suit: suits) {
         for (char value: values.toCharArray()) {
           Card card = new Card(value, suit);
           masterPack[i++] = card;
