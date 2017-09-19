@@ -43,9 +43,9 @@ public class Assig3
       System.out.println("Invalid card validated: " + testCard3.toString());
       
       
-      //********** Phase 2 - Test for Hand Class **********
+      //********** Phase 3 - Test for Deck Class **********
       
-      System.out.println('\n' + "Test for Hand Class (Phase 2):");
+      System.out.println('\n' + "Test for Deck Class (Phase 3):");
       System.out.println("Deck of 2 packs of cards:");
       Deck testDeck = new Deck(2);
       System.out.println("Dealing all unshuffled cards");
