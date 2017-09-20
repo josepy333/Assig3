@@ -84,8 +84,11 @@ public class Assig3
       System.out.println("After playing all cards");
       System.out.println( "Hand = ( " + testHand.toString() + " )");
       
+      System.out.println("Testing inspectCard() with a legal value:");
+      System.out.println(testHand.inspectCard(1));
       
-      
+      System.out.println("Testing inspectCard() with an illegal value");
+      System.out.println(testHand.inspectCard(9));
       
       //********** Phase 3 - Test for Deck Class **********
       
@@ -376,20 +379,15 @@ class Hand
    // Accessor for an individual card
    public Card inspectCard(int k)
    {
-      Card[] temp = new Card[myCards.length];
-      if (k >= myCards.length)
+      if ((k >= 0) && (k <= numCards))
       {
-         errorFlag = true;
+         return myCards[k];
       }
       else
       {
-         
-         for (int i = 0; i < myCards.length; i++)
-         {
-            temp[i] = new Card(myCards[i]);
-         }
+         Card bogusCard = new Card('G', Card.Suit.hearts);
+         return bogusCard;
       }
-      return temp[k];
    }
    
    // Converts hand to a string and displays the entire String
