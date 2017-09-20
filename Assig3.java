@@ -42,6 +42,22 @@ public class Assig3
       System.out.println("Unchanged card: " + testCard2.toString());
       System.out.println("Invalid card validated: " + testCard3.toString());
       
+      //********* Phase 2 - Test for Hand Class ***********
+      
+      // Create 3 test cards
+      Card testCard4 = new Card ('3', Card.Suit.clubs);
+      Card testCard5 = new Card ('T', Card.Suit.clubs);
+      Card testCard6 = new Card ('9', Card.Suit.hearts);
+      
+      // Creat test hand
+      Hand testHand = new Hand();
+      
+      //for (int i = 0; i < 52; i++)
+      //{
+         //testHand[i] = new Hand();
+     // }
+      
+      System.out.println('\n' + "Test for Hand Class ( Phase 2):");     
       
       //********** Phase 3 - Test for Deck Class **********
       
