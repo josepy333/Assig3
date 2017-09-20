@@ -88,7 +88,7 @@ public class Assig3
       System.out.println(testHand.inspectCard(1));
       
       System.out.println("Testing inspectCard() with an illegal value");
-      System.out.println(testHand.inspectCard(9));
+      System.out.println(testHand.inspectCard(52));
       
       //********** Phase 3 - Test for Deck Class **********
       
@@ -531,3 +531,133 @@ class Deck {
     }
   }  
 }
+
+
+/* ********** RUN **********
+Test for Card Class (Phase 1):
+Valid Card: Q of spades
+Valid Card: K of spades
+Invalid Card: ***Invalid Card***
+Valid card invalidated: ***Invalid Card***
+Unchanged card: K of spades
+Invalid card validated: 4 of spades
+
+Test for Hand Class ( Phase 2):
+Hand full
+After deal
+Hand = (  3 of clubs / T of clubs / 9 of hearts / 3 of clubs / T of clubs / 9 of hearts / 3 of clubs /
+ T of clubs / 9 of hearts / 3 of clubs / T of clubs / 9 of hearts / 3 of clubs /
+ T of clubs / 9 of hearts / 3 of clubs / T of clubs / 9 of hearts / 3 of clubs /
+ T of clubs / 9 of hearts / 3 of clubs / T of clubs / 9 of hearts / 3 of clubs /
+ T of clubs / 9 of hearts / 3 of clubs / T of clubs / 9 of hearts / 3 of clubs /
+ T of clubs / 9 of hearts / 3 of clubs / T of clubs / 9 of hearts / 3 of clubs /
+ T of clubs / 9 of hearts / 3 of clubs / T of clubs / 9 of hearts / 3 of clubs /
+ T of clubs / 9 of hearts / 3 of clubs / T of clubs / 9 of hearts / 3 of clubs /
+ T of clubs / )
+
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+Playing 9 of hearts
+Playing T of clubs
+Playing 3 of clubs
+
+After playing all cards
+Hand = (  )
+Testing inspectCard() with a legal value:
+Hit the valid case
+T of clubs
+Testing inspectCard() with an illegal value
+Hit the bogus Card String
+***Invalid Card***
+
+Test for Deck Class (Phase 3):
+Deck of 2 packs of cards:
+Dealing all unshuffled cards
+K of spades / Q of spades / J of spades / T of spades / 9 of spades / 8 of spades / 7 of spades / 6 of spades / 5 of spades / 4 of spades / 3 of spades / 2 of spades / A of spades / K of hearts / Q of hearts / J of hearts / T of hearts / 9 of hearts / 8 of hearts / 7 of hearts / 6 of hearts / 5 of hearts / 4 of hearts / 3 of hearts / 2 of hearts / A of hearts / K of diamonds / Q of diamonds / J of diamonds / T of diamonds / 9 of diamonds / 8 of diamonds / 7 of diamonds / 6 of diamonds / 5 of diamonds / 4 of diamonds / 3 of diamonds / 2 of diamonds / A of diamonds / K of clubs / Q of clubs / J of clubs / T of clubs / 9 of clubs / 8 of clubs / 7 of clubs / 6 of clubs / 5 of clubs / 4 of clubs / 3 of clubs / 2 of clubs / A of clubs / K of spades / Q of spades / J of spades / T of spades / 9 of spades / 8 of spades / 7 of spades / 6 of spades / 5 of spades / 4 of spades / 3 of spades / 2 of spades / A of spades / K of hearts / Q of hearts / J of hearts / T of hearts / 9 of hearts / 8 of hearts / 7 of hearts / 6 of hearts / 5 of hearts / 4 of hearts / 3 of hearts / 2 of hearts / A of hearts / K of diamonds / Q of diamonds / J of diamonds / T of diamonds / 9 of diamonds / 8 of diamonds / 7 of diamonds / 6 of diamonds / 5 of diamonds / 4 of diamonds / 3 of diamonds / 2 of diamonds / A of diamonds / K of clubs / Q of clubs / J of clubs / T of clubs / 9 of clubs / 8 of clubs / 7 of clubs / 6 of clubs / 5 of clubs / 4 of clubs / 3 of clubs / 2 of clubs / A of clubs / 
+Dealing all SHUFFLED cards
+K of clubs / 5 of spades / 7 of hearts / T of clubs / 8 of spades / J of clubs / Q of spades / 6 of hearts / 2 of clubs / 8 of spades / J of diamonds / 4 of hearts / 5 of clubs / 8 of diamonds / 9 of clubs / A of hearts / J of clubs / Q of clubs / 3 of spades / 5 of spades / 3 of clubs / K of hearts / 5 of clubs / Q of hearts / 2 of diamonds / 9 of clubs / J of hearts / 6 of hearts / 9 of spades / 6 of clubs / 9 of diamonds / T of diamonds / J of spades / 4 of diamonds / 5 of hearts / 6 of spades / 4 of diamonds / 7 of clubs / 3 of diamonds / A of clubs / 4 of clubs / T of hearts / K of diamonds / 9 of hearts / Q of hearts / K of spades / 4 of spades / J of hearts / 6 of clubs / A of spades / 7 of diamonds / A of hearts / 8 of clubs / 7 of hearts / 7 of diamonds / 7 of spades / 9 of spades / 5 of diamonds / J of spades / 5 of diamonds / K of hearts / 2 of diamonds / K of spades / T of spades / 3 of hearts / 2 of hearts / 9 of diamonds / Q of clubs / 3 of hearts / 6 of spades / 7 of clubs / 2 of hearts / 4 of clubs / 2 of clubs / 9 of hearts / 4 of hearts / 3 of spades / 6 of diamonds / Q of diamonds / 6 of diamonds / 2 of spades / 2 of spades / A of spades / A of clubs / Q of diamonds / 8 of hearts / A of diamonds / 3 of clubs / 4 of spades / 7 of spades / 8 of diamonds / T of diamonds / A of diamonds / T of clubs / T of spades / J of diamonds / 5 of hearts / K of clubs / T of hearts / 8 of hearts / K of diamonds / 8 of clubs / Q of spades / 3 of diamonds / 
+Deck of 1 pack of cards:
+Dealing all unshuffled cards
+K of spades / Q of spades / J of spades / T of spades / 9 of spades / 8 of spades / 7 of spades / 6 of spades / 5 of spades / 4 of spades / 3 of spades / 2 of spades / A of spades / K of hearts / Q of hearts / J of hearts / T of hearts / 9 of hearts / 8 of hearts / 7 of hearts / 6 of hearts / 5 of hearts / 4 of hearts / 3 of hearts / 2 of hearts / A of hearts / K of diamonds / Q of diamonds / J of diamonds / T of diamonds / 9 of diamonds / 8 of diamonds / 7 of diamonds / 6 of diamonds / 5 of diamonds / 4 of diamonds / 3 of diamonds / 2 of diamonds / A of diamonds / K of clubs / Q of clubs / J of clubs / T of clubs / 9 of clubs / 8 of clubs / 7 of clubs / 6 of clubs / 5 of clubs / 4 of clubs / 3 of clubs / 2 of clubs / A of clubs / 
+Dealing all SHUFFLED cards
+Q of hearts / 4 of clubs / Q of diamonds / 5 of clubs / 8 of clubs / J of spades / 9 of clubs / A of spades / 9 of hearts / 6 of diamonds / 7 of hearts / T of diamonds / 8 of diamonds / 7 of spades / Q of clubs / 4 of spades / 8 of hearts / T of clubs / A of diamonds / Q of spades / J of hearts / T of hearts / 6 of hearts / 4 of hearts / 3 of clubs / K of hearts / K of spades / A of clubs / T of spades / K of diamonds / 6 of clubs / 9 of spades / 8 of spades / A of hearts / 5 of diamonds / 5 of spades / 6 of spades / 2 of clubs / 4 of diamonds / 2 of hearts / 3 of diamonds / J of clubs / 5 of hearts / 3 of hearts / 2 of diamonds / K of clubs / 3 of spades / 7 of diamonds / 9 of diamonds / J of diamonds / 7 of clubs / 2 of spades / 
+Please enter the number of players (1 - 10):
+2
+
+Dealing the unsorted deck resulted in the following hands:
+
+Hand number 1: 
+ K of spades / J of spades / 9 of spades / 7 of spades / 5 of spades / 3 of spades / A of spades /
+ Q of hearts / T of hearts / 8 of hearts / 6 of hearts / 4 of hearts / 2 of hearts /
+ K of diamonds / J of diamonds / 9 of diamonds / 7 of diamonds / 5 of diamonds / 3 of diamonds /
+ A of diamonds / Q of clubs / T of clubs / 8 of clubs / 6 of clubs / 4 of clubs /
+ 2 of clubs /
+
+Hand number 2: 
+ Q of spades / T of spades / 8 of spades / 6 of spades / 4 of spades / 2 of spades / K of hearts /
+ J of hearts / 9 of hearts / 7 of hearts / 5 of hearts / 3 of hearts / A of hearts /
+ Q of diamonds / T of diamonds / 8 of diamonds / 6 of diamonds / 4 of diamonds / 2 of diamonds /
+ K of clubs / J of clubs / 9 of clubs / 7 of clubs / 5 of clubs / 3 of clubs /
+ A of clubs /
+
+Dealing the sorted deck resulted in the following hands:
+
+Hand number 1: 
+ 7 of spades / K of clubs / T of clubs / 7 of hearts / 3 of hearts / Q of clubs / A of spades /
+ A of clubs / 7 of diamonds / 3 of spades / 6 of spades / 2 of hearts / 8 of hearts /
+ J of hearts / 5 of spades / Q of diamonds / 8 of spades / 5 of diamonds / 6 of hearts /
+ 4 of hearts / A of diamonds / 8 of diamonds / A of hearts / 5 of hearts / 9 of spades /
+ Q of hearts /
+
+Hand number 2: 
+ 9 of hearts / 4 of diamonds / J of clubs / 9 of diamonds / 5 of clubs / 4 of spades / J of spades /
+ 2 of diamonds / 2 of spades / Q of spades / 6 of clubs / 7 of clubs / K of spades /
+ 3 of clubs / K of hearts / T of diamonds / K of diamonds / T of hearts / 3 of diamonds /
+ T of spades / 2 of clubs / 9 of clubs / J of diamonds / 8 of clubs / 4 of clubs /
+ 6 of diamonds /
+********** */
