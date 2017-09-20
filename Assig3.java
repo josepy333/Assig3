@@ -66,14 +66,26 @@ public class Assig3
       {
          if (j > 2) 
             j = 0;
-         System.out.println("Filled card " + i);
          testHand.takeCard(testCardArray[j]);
          j++;  
       }
       
       System.out.println("After deal");
       
-      System.out.println(testHand.toString());     
+      System.out.println("Hand = ( " + testHand.toString() + " )");
+      System.out.println();
+      
+      for (int i = 0; i <testHand.getNumCards(); i++)
+      {
+         System.out.println("Playing " + testHand.playCard());
+      }
+      
+      System.out.println();
+      System.out.println("After playing all cards");
+      System.out.println( "Hand = ( " + testHand.toString() + " )");
+      
+      
+      
       
       //********** Phase 3 - Test for Deck Class **********
       
@@ -145,11 +157,9 @@ public class Assig3
       for (int i = 0; i < numPlayers; i++)
       {
          playerHand[i] = new Hand();
-         System.out.println("We are on playerHand " + i);
       }
       
-      
-      int j = 1;  
+       
       // Deal the unshuffled deck out to the players
       while (deck.getTopCard() >= 0)
       {
@@ -158,10 +168,7 @@ public class Assig3
             if (deck.getTopCard() < 0 )
                break;
             playerHand[i].takeCard(deck.dealCard());
-            System.out.println("Dealing card " + j + "to player " + i);
-            j++;
          }
-         System.out.println("TEST");
       }
       
       // Display the hands
@@ -358,6 +365,14 @@ class Hand
       }
    }
    
+   // returns and removes the card in the top occupied position of the array.
+   public Card playCard()
+   {
+      int topCard = numUsed - 1;
+      numUsed--;
+      return myCards[topCard];
+   }
+   
    // Accessor for an individual card
    public Card inspectCard(int k)
    {
@@ -406,6 +421,11 @@ class Hand
    public int getNumCards()
    {
       return numCards;
+   }
+   
+   public int getNumUsed()
+   {
+      return numUsed;
    }
    
 }
