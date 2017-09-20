@@ -49,15 +49,31 @@ public class Assig3
       Card testCard5 = new Card ('T', Card.Suit.clubs);
       Card testCard6 = new Card ('9', Card.Suit.hearts);
       
+      System.out.println('\n' + "Test for Hand Class ( Phase 2):");
+      
       // Creat test hand
       Hand testHand = new Hand();
+      testHand.setNumCards(50);
       
-      //for (int i = 0; i < 52; i++)
-      //{
-         //testHand[i] = new Hand();
-     // }
+      Card [] testCardArray = new Card[3];
+      testCardArray[0] = testCard4;
+      testCardArray[1] = testCard5;
+      testCardArray[2] = testCard6;
       
-      System.out.println('\n' + "Test for Hand Class ( Phase 2):");     
+      System.out.println("Hand full");
+      
+      for (int i = 0, j = 0; i < testHand.getNumCards(); i++)
+      {
+         if (j > 2) 
+            j = 0;
+         System.out.println("Filled card " + i);
+         testHand.takeCard(testCardArray[j]);
+         j++;  
+      }
+      
+      System.out.println("After deal");
+      
+      System.out.println(testHand.toString());     
       
       //********** Phase 3 - Test for Deck Class **********
       
