@@ -85,7 +85,6 @@ public class Assig3
           Card card = testDeck.dealCard();
           System.out.print(card + " / ");
       }
-      
       System.out.println();
       
       
