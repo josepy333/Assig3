@@ -609,10 +609,8 @@ Playing 3 of clubs
 After playing all cards
 Hand = (  )
 Testing inspectCard() with a legal value:
-Hit the valid case
 T of clubs
 Testing inspectCard() with an illegal value
-Hit the bogus Card String
 ***Invalid Card***
 
 Test for Deck Class (Phase 3):
